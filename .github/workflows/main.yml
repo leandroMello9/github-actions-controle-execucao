@@ -9,3 +9,9 @@ jobs:
       steps:
        - name: Executando na main
          run: echo "Este workflow só é executado quando há um push na branch main."
+    todos:
+        name: Esse job executa em todas as branches
+        runs-on: ubuntu-latest
+        steps:
+          - name: Executando em todas as branches
+            run: echo "Este workflow é executado em todas as branches."
