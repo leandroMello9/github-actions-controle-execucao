@@ -1,0 +1,12 @@
+name: "Controle de execução de Workflow"
+on:
+  push:
+
+jobs:
+    apenas-main:
+      name: Esse job só executa na branch main  
+      if: ${{github.ref == 'refs/heads/main'}}
+      runs-on: ubuntu-latest
+      steps:
+       - name: Executando na main
+         run: echo "Este workflow só é executado quando há um push na branch main."
