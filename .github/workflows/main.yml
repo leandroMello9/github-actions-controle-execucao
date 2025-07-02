@@ -13,7 +13,7 @@ jobs:
         name: Esse job executa em todas as branches
         runs-on: ubuntu-latest
         steps:
-          - name: Executando em todas as branches
+          - name: Executando em todas as features
             if: ${{ contains(github.ref, 'refs/heads/feature') }}
             run: echo "Este workflow é executado em todas as branches."
           - name: Executando em HotFix
