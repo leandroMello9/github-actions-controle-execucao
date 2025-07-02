@@ -1,7 +1,6 @@
 name: "Controle de execução de Workflow"
 on:
   push:
-
 jobs:
     apenas-main:
       name: Esse job só executa na branch main  
