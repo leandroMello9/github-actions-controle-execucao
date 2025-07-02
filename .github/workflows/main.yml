@@ -1,7 +1,6 @@
 name: "Controle de execução de Workflow"
 on:
   push:
-
 jobs:
     apenas-main:
       name: Esse job só executa na branch main  
@@ -10,3 +9,13 @@ jobs:
       steps:
        - name: Executando na main
          run: echo "Este workflow só é executado quando há um push na branch main."
+    todos:
+        name: Esse job executa em todas as branches
+        runs-on: ubuntu-latest
+        steps:
+          - name: Executando em todas as features
+            if: ${{ contains(github.ref, 'refs/heads/feature') }}
+            run: echo "Este workflow é executado em todas as branches."
+          - name: Executando em HotFix
+            if: ${{ contains(github.ref, 'refs/heads/hotfix') }}
+            run: echo "Este workflow é executado em HotFix."
