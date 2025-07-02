@@ -16,4 +16,5 @@ jobs:
           - name: Executando em todas as branches
             run: echo "Este workflow é executado em todas as branches."
           - name: Executando em HotFix
+            if: ${{github.ref == 'refs/heads/hotfix'}}
             run: echo "Este workflow é executado em HotFix."
